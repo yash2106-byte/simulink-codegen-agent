@@ -1,0 +1,62 @@
+
+{
+  "model_name": "first",
+
+  "blocks": [
+    {
+      "id": "1",
+      "type": "Constant",
+      "name": "Constant1",
+      "params": {
+        "value": 10
+      }
+    },
+    {
+      "id": "2",
+      "type": "Constant",
+      "name": "Constant2",
+      "params": {
+        "value": 5
+      }
+    },
+    {
+      "id": "3",
+      "type": "Add",
+      "name": "Add1",
+      "params": {}
+    },
+    {
+      "id": "4",
+      "type": "Gain",
+      "name": "Gain1",
+      "params": {
+        "gain": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "Scope",
+      "name": "Output1",
+      "params": {}
+    }
+  ],
+
+  "connections": [
+    {
+      "from": "1.out",
+      "to": "3.in1"
+    },
+    {
+      "from": "2.out",
+      "to": "3.in2"
+    },
+    {
+      "from": "3.out",
+      "to": "4.in"
+    },
+    {
+      "from": "4.out",
+      "to": "5.in"
+    }
+  ]
+}
