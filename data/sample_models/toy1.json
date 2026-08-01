@@ -43,19 +43,19 @@
 
   "connections": [
     {
-      "from": "1.out",
+      "from_": "1.out",
       "to": "3.in1"
     },
     {
-      "from": "2.out",
+      "from_": "2.out",
       "to": "3.in2"
     },
     {
-      "from": "3.out",
+      "from_": "3.out",
       "to": "4.in"
     },
     {
-      "from": "4.out",
+      "from_": "4.out",
       "to": "5.in"
     }
   ]
