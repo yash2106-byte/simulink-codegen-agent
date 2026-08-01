@@ -1,7 +1,5 @@
 from pydantic import BaseModel,ValidationError
 import json
-
-
 class Block(BaseModel):
     id: int
     type: str
@@ -22,15 +20,12 @@ def load(path:str):
         try:
             temp = json.load(f)
 
-            model = ModelIR.model_validate(temp)
+            return ModelIR.model_validate(temp)
 
-            print(model)
         except ValidationError as e:
             print(e.errors())
-        # print(temp)
 
 
-load("../../data/sample_models/toy1.json")
 
 
 
