@@ -1,20 +1,37 @@
-# This file will work as a first check point for the json file to ensure it doesnt break later
-from pydantic import BaseModel
-from typing import Dict, List, Any
+from pydantic import BaseModel,ValidationError
+import json
+
 
 class Block(BaseModel):
-    id: str
+    id: int
     type: str
     name: str
-    params: Dict[str, Any] = {}
-
+    params: dict
 
 class Connection(BaseModel):
     from_: str
     to: str
 
-
-class Model(BaseModel):
+class ModelIR(BaseModel):
     model_name: str
-    blocks: List[Block]
-    connections: List[Connection]
+    blocks: list[Block]
+    connections: list[Connection]
+
+def load(path:str):
+    with open(path,"r") as f:
+        temp = json.load(f)
+        try:
+            temp = json.load(f)
+
+            model = ModelIR.model_validate(temp)
+
+            print(model)
+        except ValidationError as e:
+            print(e.errors())
+        print(temp)
+
+
+load("../../data/sample_models/toy1.json")
+
+
+
