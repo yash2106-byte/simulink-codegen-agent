@@ -19,7 +19,6 @@ class ModelIR(BaseModel):
 
 def load(path:str):
     with open(path,"r") as f:
-        temp = json.load(f)
         try:
             temp = json.load(f)
 
@@ -28,7 +27,7 @@ def load(path:str):
             print(model)
         except ValidationError as e:
             print(e.errors())
-        print(temp)
+        # print(temp)
 
 
 load("../../data/sample_models/toy1.json")
