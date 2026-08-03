@@ -1,21 +1,23 @@
+#This code will take the json object and then create a graph which will help the agent to understand the sequence
 import networkx as nx
 
+# # ---------------- Sample Model ----------------
 
-class Block:
-    def __init__(self, id):
-        self.id = id
-
-
-class Connection:
-    def __init__(self, from_, to):
-        self.from_ = from_
-        self.to = to
+# class Block:
+#     def __init__(self, id):
+#         self.id = id
 
 
-class Model:
-    def __init__(self, blocks, connections):
-        self.blocks = blocks
-        self.connections = connections
+# class Connection:
+#     def __init__(self, from_, to):
+#         self.from_ = from_
+#         self.to = to
+
+
+# class Model:
+#     def __init__(self, blocks, connections):
+#         self.blocks = blocks
+#         self.connections = connections
 
 
 def build_execution_order(model) -> list[str]:
@@ -37,21 +39,21 @@ def build_execution_order(model) -> list[str]:
     return list(nx.topological_sort(graph))
 
 
-# ---------------- Sample Model ----------------
+# # ---------------- Sample Model ----------------
 
-blocks = [
-    Block("1"),   # Constant1
-    Block("2"),   # Constant2
-    Block("3"),   # Add
-    Block("4"),   # Gain
-]
+# blocks = [
+#     Block("1"),   # Constant1
+#     Block("2"),   # Constant2
+#     Block("3"),   # Add
+#     Block("4"),   # Gain
+# ]
 
-connections = [
-    Connection("1.out", "3.in1"),
-    Connection("2.out", "3.in2"),
-    Connection("3.out", "4.in"),
-]
-model = Model(blocks, connections)
+# connections = [
+#     Connection("1.out", "3.in1"),
+#     Connection("2.out", "3.in2"),
+#     Connection("3.out", "4.in"),
+# ]
+# model = Model(blocks, connections)
 
-order = build_execution_order(model)
-print(order)
+# order = build_execution_order(model)
+# print(order)

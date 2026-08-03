@@ -1,12 +1,19 @@
-# First load all the json object here
 from pathlib import Path
 from src.ir.builder import load_json
+from src.ir.schema import load
+from src.graph.ordering import build_execution_order
+
 PROJECT_ROOT = Path(__file__).resolve().parent
 json_path = PROJECT_ROOT / "data" / "sample_models" / "toy1.json"
+
+# Step 1: Read JSON
 model = load_json(json_path)
 
-# Then give it to the schema.py to check weather the json we have recived is correct or not
-from src.ir.schema import load
-print(load(model))
+# Step 2: Validate and convert to ModelIR
+model = load(model)
 
+# print(model)
+# print(type(model))   # print ModelIR
 
+# Step 3: Build execution order
+print(build_execution_order(model))
