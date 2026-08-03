@@ -1,7 +1,8 @@
-from pydantic import BaseModel,ValidationError
+from pydantic import BaseModel,ValidationError,ConfigDict
 import json
 class Block(BaseModel):
-    id: int
+    model_config = ConfigDict(strict=True)
+    id: str
     type: str
     name: str
     params: dict
@@ -15,15 +16,14 @@ class ModelIR(BaseModel):
     blocks: list[Block]
     connections: list[Connection]
 
-def load(path:str):
-    with open(path,"r") as f:
-        try:
-            temp = json.load(f)
+def load(model):
+    try:
+        temp = model
 
-            return ModelIR.model_validate(temp)
+        return ModelIR.model_validate(temp)
 
-        except ValidationError as e:
-            print(e.errors())
+    except ValidationError as e:
+        print(e.errors())
 
 
 
