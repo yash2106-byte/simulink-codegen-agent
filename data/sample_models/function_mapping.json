@@ -1,0 +1,5 @@
+{
+  "Constant": { "function": "Constant", "signature": ["value"] },
+  "Gain": { "function": "Gain", "signature": ["input", "gain"] },
+  "Add": { "function": "Add", "signature": ["a", "b"] }
+}
