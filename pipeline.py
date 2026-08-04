@@ -32,3 +32,6 @@ for block in model.blocks:
     print(f"Function   : {function_name}")
     print(f"Arguments  : {arguments}")
     print("-" * 40)
+
+
+# Step 6: 
