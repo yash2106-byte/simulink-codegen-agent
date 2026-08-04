@@ -4,6 +4,7 @@ from src.ir.schema import load
 from src.graph.ordering import build_execution_order
 from src.mapping.function_mapper import get_function_call
 from src.mapping.function_mapper import load_mapper
+from c_stubs.c_function_generatir import generate_c_code
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 json_path = PROJECT_ROOT / "data" / "sample_models" / "toy1.json"
@@ -17,7 +18,7 @@ model = load(model)
 # print(type(model))   # print ModelIR
 
 # Step 3: Build execution order
-print(build_execution_order(model))
+order = build_execution_order(model)
 
 # Step 4 : Load function mapper
 mapping_path = PROJECT_ROOT / "data" / "sample_models" / "function_mapping.json"
@@ -34,4 +35,7 @@ for block in model.blocks:
     print("-" * 40)
 
 
-# Step 6: 
+# Step 6: Generated the c code
+# print(generate_c_code(model=model,execution_order=order,mapping=mapper))
+
+print(order)
