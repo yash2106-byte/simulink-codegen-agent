@@ -2,6 +2,8 @@ from pathlib import Path
 from src.ir.builder import load_json
 from src.ir.schema import load
 from src.graph.ordering import build_execution_order
+from src.mapping.function_mapper import get_function_call
+from src.mapping.function_mapper import load_mapper
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 json_path = PROJECT_ROOT / "data" / "sample_models" / "toy1.json"
@@ -12,10 +14,21 @@ model = load_json(json_path)
 # Step 2: Validate and convert to ModelIR
 model = load(model)
 
-# for block in model.blocks:
-#     print(block.type)
-
 # print(type(model))   # print ModelIR
 
 # Step 3: Build execution order
 print(build_execution_order(model))
+
+# Step 4 : Load function mapper
+mapping_path = PROJECT_ROOT / "data" / "sample_models" / "function_mapping.json"
+mapper = load_mapper(mapping_path)
+
+# Step 5: Mapping each id with its function
+for block in model.blocks:
+    function_name, arguments = get_function_call(block, mapper)
+
+    print(f"Block Name : {block.name}")
+    print(f"Block Type : {block.type}")
+    print(f"Function   : {function_name}")
+    print(f"Arguments  : {arguments}")
+    print("-" * 40)

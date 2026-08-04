@@ -23,10 +23,6 @@ def load_mapper(path: Path):
         return json.load(f)
 
 
-mapping_path = PROJECT_ROOT / "data" / "sample_models" / "function_mapping.json"
-
-mapper = load_mapper(mapping_path)
-
 
 # Get Function Mapping
 def get_function_call(block, mapper):
@@ -64,13 +60,3 @@ def get_function_call(block, mapper):
 
     return function_name, arguments
 
-
-# Print Function Calls
-for block in model.blocks:
-    function_name, arguments = get_function_call(block, mapper)
-
-    print(f"Block Name : {block.name}")
-    print(f"Block Type : {block.type}")
-    print(f"Function   : {function_name}")
-    print(f"Arguments  : {arguments}")
-    print("-" * 40)
