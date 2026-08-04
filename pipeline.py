@@ -12,7 +12,9 @@ model = load_json(json_path)
 # Step 2: Validate and convert to ModelIR
 model = load(model)
 
-# print(model)
+# for block in model.blocks:
+#     print(block.type)
+
 # print(type(model))   # print ModelIR
 
 # Step 3: Build execution order
