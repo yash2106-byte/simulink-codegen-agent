@@ -14,12 +14,14 @@ model = load_json(json_path)
 
 # Step 2: Validate and convert to ModelIR
 model = load(model)
-
+print(model)
 # print(type(model))   # print ModelIR
 
 # Step 3: Build execution order
 order = build_execution_order(model)
-
+# print(model)
+print(type(model))
+print("hi")
 # Step 4 : Load function mapper
 mapping_path = PROJECT_ROOT / "data" / "sample_models" / "function_mapping.json"
 mapper = load_mapper(mapping_path)
@@ -33,9 +35,8 @@ for block in model.blocks:
     print(f"Function   : {function_name}")
     print(f"Arguments  : {arguments}")
     print("-" * 40)
-
+    print(block)
 
 # Step 6: Generated the c code
-# print(generate_c_code(model=model,execution_order=order,mapping=mapper))
+print(generate_c_code(model=model,execution_order=order,mapping=mapper))
 
-print(order)
