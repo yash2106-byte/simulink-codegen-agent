@@ -1,6 +1,21 @@
 {
-  "Constant": { "function": "Constant", "signature": ["value"] },
-  "Gain": { "function": "Gain", "signature": ["input", "gain"] },
-  "Add": { "function": "Add", "signature": ["a", "b"] },
-"Scope": {"function": "Scope","signature": ["value"]}
+  "Constant": {
+    "function": "Constant",
+    "signature": ["value"]
+  },
+
+  "Gain": {
+    "function": "Gain",
+    "signature": ["in", "gain"]
+  },
+
+  "Add": {
+    "function": "Add",
+    "signature": ["in1", "in2"]
+  },
+
+  "Scope": {
+    "function": "Scope",
+    "signature": ["in"]
+  }
 }

@@ -26,16 +26,16 @@ print("hi")
 mapping_path = PROJECT_ROOT / "data" / "sample_models" / "function_mapping.json"
 mapper = load_mapper(mapping_path)
 
-# Step 5: Mapping each id with its function
-for block in model.blocks:
-    function_name, arguments = get_function_call(block, mapper)
+# Step 5: Mapping each id with its function  this work will be done by function genrator only we can refer the below part for debbuging
+# for block in model.blocks:
+#     function_name, arguments = get_function_call(block, mapper)
 
-    print(f"Block Name : {block.name}")
-    print(f"Block Type : {block.type}")
-    print(f"Function   : {function_name}")
-    print(f"Arguments  : {arguments}")
-    print("-" * 40)
-    print(block)
+#     print(f"Block Name : {block.name}")
+#     print(f"Block Type : {block.type}")
+#     print(f"Function   : {function_name}")
+#     print(f"Arguments  : {arguments}")
+#     print("-" * 40)
+#     print(block)
 
 # Step 6: Generated the c code
 print(generate_c_code(model=model,execution_order=order,mapping=mapper))
