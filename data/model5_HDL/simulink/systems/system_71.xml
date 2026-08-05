@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-8, -8, 1544, 872]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">125</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="power" SID="72">
+    <P Name="Position">[10, 203, 40, 217]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="ForegroundColor">red</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">power</P>
+    </Port>
+  </Block>
+  <Block BlockType="Abs" Name="Abs" SID="73">
+    <P Name="Position">[405, 85, 435, 115]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Abs" Name="Abs1" SID="74">
+    <P Name="Position">[405, 315, 435, 345]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant" SID="75">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[450, 250, 480, 280]</P>
+    <P Name="ZOrder">230</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.465</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">==</P>
+      <P Name="const">13</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Delay" Name="Delay1" SID="77">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[285, 313, 320, 347]</P>
+    <P Name="ZOrder">274</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="InputPortMap">u0</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">HPF Power</P>
+    </Port>
+  </Block>
+  <Block BlockType="Reference" Name="HDL Counter" SID="79">
+    <P Name="Ports">[0, 1]</P>
+    <P Name="Position">[325, 235, 395, 295]</P>
+    <P Name="ZOrder">229</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.426</P>
+    <P Name="SourceBlock">hdlsllib/Sources/HDL Counter</P>
+    <P Name="SourceType">HDL Counter</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="CountType">Count limited</P>
+      <P Name="CountInit">2</P>
+      <P Name="CountStep">1</P>
+      <P Name="CountMax">13</P>
+      <P Name="CountFromType">Initial value</P>
+      <P Name="CountFrom">2</P>
+      <P Name="CountResetPort">off</P>
+      <P Name="CountLoadPort">off</P>
+      <P Name="CountEnbPort">off</P>
+      <P Name="CountDirPort">off</P>
+      <P Name="CountDataType">Unsigned</P>
+      <P Name="CountWordLen">8</P>
+      <P Name="CountFracLen">0</P>
+      <P Name="CountSampTime">1/Fs</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="SubSystem" Name="Highpass Filter" SID="80">
+    <P Name="Tag">FilterWizardSubSystem</P>
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[180, 310, 255, 350]</P>
+    <P Name="ZOrder">273</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="UserDataPersistent">on</P>
+    <P Name="UserData" Ref="bdmxdata:UserData_80"/>
+    <P Name="ErrorFcn">dspFilterRealizedInBasicElemsAlgLoopErrFcnCallback</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_80"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Lowpass Filter" SID="107">
+    <P Name="Tag">FilterWizardSubSystem</P>
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[180, 80, 255, 120]</P>
+    <P Name="ZOrder">272</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="UserDataPersistent">on</P>
+    <P Name="UserData" Ref="bdmxdata:UserData_107"/>
+    <P Name="ErrorFcn">dspFilterRealizedInBasicElemsAlgLoopErrFcnCallback</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_107"/>
+  </Block>
+  <Block BlockType="Reference" Name="Resettable Delay" SID="133">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[550, 127, 610, 178]</P>
+    <P Name="ZOrder">239</P>
+    <P Name="BlockMirror">on</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.426</P>
+    <P Name="SourceBlock">hdlsllib/Discrete/Unit Delay Resettable
+Synchronous</P>
+    <P Name="SourceType">Unit Delay Resettable Synchronous</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="InitialCondition">0.0</P>
+      <P Name="SampleTime">-1</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Reference" Name="Resettable Delay 1" SID="134">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[660, 327, 720, 378]</P>
+    <P Name="ZOrder">241</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.426</P>
+    <P Name="SourceBlock">hdlsllib/Discrete/Unit Delay Resettable
+Synchronous</P>
+    <P Name="SourceType">Unit Delay Resettable Synchronous</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="InitialCondition">0.0</P>
+      <P Name="SampleTime">-1</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Saturate" Name="Saturation" SID="141">
+    <P Name="Position">[735, 270, 765, 300]</P>
+    <P Name="ZOrder">276</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="UpperLimit">2^9-1</P>
+    <P Name="LowerLimit">2^-6</P>
+    <P Name="RndMeth">Simplest</P>
+  </Block>
+  <Block BlockType="Sum" Name="Sum" SID="135">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[525, 85, 555, 115]</P>
+    <P Name="ZOrder">237</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="Inputs">|++</P>
+    <P Name="OutDataTypeStr">Inherit: Same as first input</P>
+  </Block>
+  <Block BlockType="Sum" Name="Sum1" SID="136">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[525, 315, 555, 345]</P>
+    <P Name="ZOrder">240</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="Inputs">|++</P>
+    <P Name="OutDataTypeStr">Inherit: Same as first input</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Triggered Subsystem" SID="143">
+    <P Name="Ports">[2, 1, 0, 1]</P>
+    <P Name="Position">[850, 245, 890, 305]</P>
+    <P Name="ZOrder">278</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">Sunny</P>
+    </Port>
+    <System Ref="system_143"/>
+  </Block>
+  <Block BlockType="Outport" Name="category" SID="138">
+    <P Name="Position">[1145, 268, 1175, 282]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="ForegroundColor">red</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">136#out:1</P>
+    <P Name="Points">[8, 0]</P>
+    <Branch>
+      <P Name="ZOrder">2</P>
+      <P Name="Points">[0, -45]</P>
+      <P Name="Dst">141#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">3</P>
+      <P Name="Points">[0, 10]</P>
+      <P Name="Dst">134#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">power</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">72#out:1</P>
+    <P Name="Points">[51, 0]</P>
+    <Branch>
+      <P Name="ZOrder">5</P>
+      <P Name="Labels">[1, 1]</P>
+      <P Name="Points">[0, 120]</P>
+      <P Name="Dst">80#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">6</P>
+      <P Name="Points">[0, -110]</P>
+      <P Name="Dst">107#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">135#out:1</P>
+    <P Name="Points">[171, 0; 0, 40]</P>
+    <Branch>
+      <P Name="ZOrder">9</P>
+      <P Name="Dst">133#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">10</P>
+      <P Name="Points">[0, 125; 46, 0; 0, -5]</P>
+      <P Name="Dst">143#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">80#out:1</P>
+    <P Name="Dst">77#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">107#out:1</P>
+    <P Name="Dst">73#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Sunny</P>
+    <P Name="ZOrder">36</P>
+    <P Name="Labels">[-1, 0]</P>
+    <P Name="Src">143#out:1</P>
+    <P Name="Dst">138#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">79#out:1</P>
+    <P Name="Dst">75#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">133#out:1</P>
+    <P Name="Points">[-5, 0]</P>
+    <P Name="Dst">135#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">73#out:1</P>
+    <P Name="Dst">135#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">134#out:1</P>
+    <P Name="Points">[69, 0; 0, 61; -254, 0]</P>
+    <P Name="Dst">136#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">74#out:1</P>
+    <P Name="Dst">136#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">75#out:1</P>
+    <P Name="Points">[75, 0]</P>
+    <Branch>
+      <P Name="ZOrder">22</P>
+      <P Name="Points">[0, 100]</P>
+      <P Name="Dst">134#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">23</P>
+      <P Name="Points">[74, 0; 0, -2]</P>
+      <Branch>
+        <P Name="ZOrder">35</P>
+        <P Name="Points">[73, 0; 0, -37; 163, 0]</P>
+        <P Name="Dst">143#trigger</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">34</P>
+        <P Name="Points">[0, -98]</P>
+        <P Name="Dst">133#in:2</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">HPF Power</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">77#out:1</P>
+    <P Name="Dst">74#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">31</P>
+    <P Name="Src">141#out:1</P>
+    <P Name="Points">[38, 0; 0, 5]</P>
+    <P Name="Dst">143#in:2</P>
+  </Line>
+</System>

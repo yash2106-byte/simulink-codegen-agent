@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2020a_201913111440">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="9bec171f-6dbd-45d7-ab09-a66b4cdbb258">
+    <globalData type="sltp.mm.core.GlobalData" uuid="1aa6d04a-9218-4bdb-b389-0929088d5f20">
+      <dataName>port1Power</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <priorityDirection>HighNumberLast</priorityDirection>
+    <unusedIds>1</unusedIds>
+    <editorState type="sltp.mm.core.EditorState" uuid="7992fa53-5ee5-4458-aafd-7a85cbfcdbd3">
+      <isSynchronized>true</isSynchronized>
+    </editorState>
+    <rootTask type="sltp.mm.core.Task" uuid="3354e3a5-bbdb-425d-8e07-def0adf9dacc">
+      <context type="sltp.mm.core.Context" uuid="9bec171f-6dbd-45d7-ab09-a66b4cdbb258"/>
+      <explicit>false</explicit>
+      <name>Default</name>
+      <priority>-2147483648</priority>
+      <subgraph type="sltp.mm.core.Graph" uuid="0c0d0f60-5980-441e-8a86-0e351be2686a">
+        <tasks type="sltp.mm.core.Task" uuid="1974c40e-255e-4756-a569-92444a579586">
+          <baseTask>true</baseTask>
+          <context type="sltp.mm.core.Context" uuid="9bec171f-6dbd-45d7-ab09-a66b4cdbb258"/>
+          <explicit>false</explicit>
+          <id>2</id>
+          <name>D1</name>
+          <priority>40</priority>
+          <rates type="sltp.mm.core.Rate" uuid="8dc8d0cf-088e-432d-b378-6255214fe85f">
+            <annotation>D1</annotation>
+            <color>-436207361</color>
+            <hasBlocks>true</hasBlocks>
+            <rateSpec type="sltp.mm.core.RateSpec">
+              <period>0.010416666666666666</period>
+            </rateSpec>
+            <sti>0</sti>
+          </rates>
+        </tasks>
+      </subgraph>
+    </rootTask>
+  </sltp.mm.core.Context>
+</sltp_graph>

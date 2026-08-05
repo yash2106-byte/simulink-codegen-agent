@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-8, -8, 1544, 872]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">125</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="In1" SID="144">
+    <P Name="Position">[30, 23, 60, 37]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="ForegroundColor">cyan</P>
+  </Block>
+  <Block BlockType="Inport" Name="In2" SID="145">
+    <P Name="Position">[20, 43, 50, 57]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="TriggerPort" Name="Trigger" SID="147">
+    <P Name="Ports">[]</P>
+    <P Name="Position">[120, -165, 140, -145]</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="VariantControl">Variant</P>
+    <P Name="StatesWhenEnabling">held</P>
+    <P Name="PortDimensions">1</P>
+  </Block>
+  <Block BlockType="Reference" Name="Daylight Threshold" SID="76">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[390, -90, 420, -60]</P>
+    <P Name="ZOrder">274</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="LibraryVersion">1.465</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;=</P>
+      <P Name="const">3</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Product" Name="Divide1" SID="78">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[145, 22, 175, 58]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="Inputs">*/</P>
+    <P Name="RndMeth">Zero</P>
+    <P Name="SaturateOnIntegerOverflow">on</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator" SID="106">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[520, -25, 555, 10]</P>
+    <P Name="ZOrder">273</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">Sunny</P>
+    </Port>
+  </Block>
+  <Block BlockType="Reference" Name="Sunny Threshold" SID="137">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[435, -15, 465, 15]</P>
+    <P Name="ZOrder">272</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="LibraryVersion">1.465</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <P Name="SourceProductBaseCode">SL</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;=</P>
+      <P Name="const">22</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Outport" Name="Out1" SID="146">
+    <P Name="Position">[645, -12, 675, 2]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="ForegroundColor">cyan</P>
+    <P Name="InitialOutput">0</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">29</P>
+    <P Name="Src">145#out:1</P>
+    <P Name="Dst">78#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">31</P>
+    <P Name="Src">137#out:1</P>
+    <P Name="Dst">106#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">144#out:1</P>
+    <P Name="Points">[31, 0]</P>
+    <Branch>
+      <P Name="ZOrder">38</P>
+      <P Name="Points">[0, -105]</P>
+      <P Name="Dst">76#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">37</P>
+      <P Name="Dst">78#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">76#out:1</P>
+    <P Name="Points">[68, 0; 0, 60]</P>
+    <P Name="Dst">106#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">36</P>
+    <P Name="Src">78#out:1</P>
+    <P Name="Points">[115, 0; 0, -40]</P>
+    <P Name="Dst">137#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Sunny</P>
+    <P Name="ZOrder">35</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">106#out:1</P>
+    <P Name="Dst">146#in:1</P>
+  </Line>
+</System>

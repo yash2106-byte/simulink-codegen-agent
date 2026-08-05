@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[20, 20, 1112, 763]</P>
+  <P Name="Open">on</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">150</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="Power" SID="1">
+    <P Name="Position">[375, 228, 405, 242]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="SampleTime">1/Fs</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="Data Type Conversion" SID="139">
+    <P Name="Position">[565, 283, 640, 317]</P>
+    <P Name="ZOrder">49</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="OutDataTypeStr">fixdt(1,32,15)</P>
+    <P Name="RndMeth">Floor</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Delay" Name="Delay" SID="58">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[565, 138, 600, 172]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="InputPortMap">u0</P>
+    <P Name="DelayLength">15</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">Power</P>
+    </Port>
+  </Block>
+  <Block BlockType="Gain" Name="Gain1" SID="142">
+    <P Name="Position">[1030, 285, 1060, 315]</P>
+    <P Name="ZOrder">50</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="Gain">486</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">Sunny</P>
+    </Port>
+  </Block>
+  <Block BlockType="SubSystem" Name="SunnyDetector" SID="71">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[750, 244, 900, 356]</P>
+    <P Name="ZOrder">48</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_71"/>
+  </Block>
+  <Block BlockType="Scope" Name="Time Domain" SID="2">
+    <P Name="Ports">[2]</P>
+    <P Name="Position">[1230, 173, 1290, 297]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;PlotType&apos;,&apos;Line&apos;,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;-348.94299&apos;,&apos;MaxYLimReal&apos;,&apos;648.58368&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos; 0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;648.58368&apos;,&apos;LegendVisibility&apos;,&apos;On&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{struct(&apos;Visible&apos;,&apos;off&apos;),struct(&apos;Visible&apos;,&apos;on&apos;),struct(&apos;Visible&apos;,&apos;on&apos;)}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,0,&apos;LineNames&apos;,{{[]}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;-348.94299&apos;,&apos;MaxYLimReal&apos;,&apos;648.58368&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos; 0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;648.58368&apos;,&apos;LegendVisibility&apos;,&apos;On&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true,&apos;OnceAtStop&apos;,false,&apos;PreviousZoomMode&apos;,&apos;ZoomX&apos;,&apos;PreviousAutoscale&apos;,&apos;X&apos;),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2019b&apos;)),&apos;Version&apos;,&apos;2019b&apos;,&apos;Position&apos;,[386 161 560 380])</P>
+    <P Name="NumInputPorts">2</P>
+    <P Name="Floating">off</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">1#out:1</P>
+    <P Name="Points">[58, 0]</P>
+    <Branch>
+      <P Name="ZOrder">14</P>
+      <P Name="Points">[0, 65]</P>
+      <P Name="Dst">139#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">11</P>
+      <P Name="Points">[0, -81; 0, 1]</P>
+      <P Name="Dst">58#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">Power</P>
+    <P Name="ZOrder">91</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">58#out:1</P>
+    <P Name="Points">[535, 0; 0, 50]</P>
+    <P Name="Dst">2#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">88</P>
+    <P Name="Src">71#out:1</P>
+    <P Name="Dst">142#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">89</P>
+    <P Name="Src">139#out:1</P>
+    <P Name="Dst">71#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Sunny</P>
+    <P Name="ZOrder">92</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">142#out:1</P>
+    <P Name="Points">[75, 0; 0, -35]</P>
+    <P Name="Dst">2#in:2</P>
+  </Line>
+  <Annotation SID="149">
+    <P Name="Name">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body align=&quot;left&quot; style=&quot; font-family:&apos;Helvetica&apos;; font-size:10px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18px; font-weight:600;&quot;&gt;HDL Code Generation using HDL Coder&lt;/span&gt;&lt;span style=&quot; font-size:18px; font-weight:600; vertical-align:super;&quot;&gt;®&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;The model has been modified to support HDL Code generation. The buffers have been replaced &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;with a serial implementation to compute the sum over the 3-hour window and the model has been &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;converted to a fixed-point implementation necessary for FPGA implementations.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;To generate HDL code, right click on the SunnyDetector subsystem and select &lt;/span&gt;&lt;span style=&quot; font-size:12px; font-weight:600;&quot;&gt;HDL Code &amp;gt; Generate HDL for Subsystem&lt;/span&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</P>
+    <P Name="Position">[564, 7, 1224, 107]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="Interpreter">rich</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+  <Annotation SID="150">
+    <P Name="Name">Copyright 2020 The MathWorks, Inc.</P>
+    <P Name="Position">[743, 429, 907, 443]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-12</P>
+  </Annotation>
+</System>
